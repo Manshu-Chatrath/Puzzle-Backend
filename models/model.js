@@ -11,6 +11,6 @@ module.exports= class puzzle
     }
     static update(img,ml,ms,limitation,firstmin,firstsec,secondmin,secondsec,thirdmin,thirdsec)
     { 
-        return db.execute('update rules SET img=(?),ml=(?),ms=(?),limitation=(?),firstmin=(?),firstsec=(?),secondmin=(?),secondsec=(?),thirdmin=(?),thirdsec=(?)',[img,ml,ms,limitation,firstmin,firstsec,secondmin,secondsec,thirdmin,thirdsec])
+        return db.execute('update rules SET img=(?),ml=(?),ms=(?),limitation=(?),firstmin=(?),firstsec=(?),secondmin=(?),secondsec=(?),thirdmin=(?),thirdsec=(?) where id = 1',[img,ml,ms,limitation,firstmin,firstsec,secondmin,secondsec,thirdmin,thirdsec])
     }
 }      
