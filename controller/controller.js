@@ -26,7 +26,7 @@ exports.personalinfo = (req, res, next) => {
       sgMail
         .send(msg)
         .then(() => {
-          res.json({
+          return res.json({
             message:
               "Yes confirmation has been sent to your email and you will recieve a call!",
             success: true,
@@ -42,7 +42,7 @@ exports.personalinfo = (req, res, next) => {
 };
 
 exports.update = (req, res, next) => {
-  console.log("here");
+ 
   Puzzle.update(
     req.body.img,
     req.body.totalmin,
@@ -56,7 +56,7 @@ exports.update = (req, res, next) => {
     req.body.thirdprizesec
   )
     .then((result) => {
-      res.json({
+      return res.json({
         message: "Yes new rules have been set according to your request! ",
       });
     })
